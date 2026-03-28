@@ -17,6 +17,6 @@ resource "dockerhub_repository" "pawn-service-be" {
 
 resource "dockerhub_repository" "pawn-service-fe" {
   name        = var.DOCKER_FRONTEND_REPO_NAME
-  namespace   = var.DOCKER_USERNAME 
+  namespace   = var.DOCKER_USERNAME
   description = "Pawn Service Frontend"
 }

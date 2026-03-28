@@ -14,7 +14,7 @@ resource "random_password" "tunnel_secret" {
 
 resource "cloudflare_zero_trust_tunnel_cloudflared" "app" {
   account_id    = var.ACCOUNT_ID
-  name          = "pawn-service"
+  name          = "${var.ENV}-pawn-service"
   tunnel_secret = base64encode(random_password.tunnel_secret.result)
 }
 
