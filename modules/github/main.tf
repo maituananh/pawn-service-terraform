@@ -65,3 +65,18 @@ resource "github_repository_webhook" "pawn-service-cicd-be" {
 
   events = ["pull_request"]
 }
+
+# SETUP FOR TERRAFORM REPOSITORY
+resource "github_repository_webhook" "pawn-service-terraform" {
+  repository = var.TERRAFORM_REPO_NAME
+
+  configuration {
+    url          = var.TERRAFORM_WEBHOOK_PAYLOAD_URL
+    content_type = "json"
+    insecure_ssl = false
+  }
+
+  active = false
+
+  events = ["pull_request"]
+}
