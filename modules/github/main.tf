@@ -17,7 +17,7 @@ resource "github_repository_webhook" "pawn-service-fe" {
     insecure_ssl = false
   }
 
-  active = false
+  active = true
 
   events = ["pull_request"]
 }
@@ -32,7 +32,7 @@ resource "github_repository_webhook" "pawn-service-be" {
     insecure_ssl = false
   }
 
-  active = false
+  active = true
 
   events = ["pull_request"]
 }
@@ -47,7 +47,7 @@ resource "github_repository_webhook" "pawn-service-cicd-fe" {
     insecure_ssl = false
   }
 
-  active = false
+  active = true
 
   events = ["pull_request"]
 }
@@ -61,7 +61,7 @@ resource "github_repository_webhook" "pawn-service-cicd-be" {
     insecure_ssl = false
   }
 
-  active = false
+  active = true
 
   events = ["pull_request"]
 }
@@ -76,7 +76,7 @@ resource "github_repository_webhook" "pawn-service-terraform" {
     insecure_ssl = false
   }
 
-  active = false
+  active = true
 
   events = ["pull_request"]
 }
