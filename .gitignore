@@ -12,6 +12,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 .terraform.lock.hcl
+*.hcl
 
 # Environment & Private data
 .env

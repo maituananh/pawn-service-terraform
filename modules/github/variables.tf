@@ -14,10 +14,18 @@ variable "BACKEND_WEBHOOK_PAYLOAD_URL" {
   type = string
 }
 
+variable "TERRAFORM_WEBHOOK_PAYLOAD_URL" {
+  type = string
+}
+
 variable "FRONTEND_REPO_NAME" {
   type = string
 }
 
 variable "BACKEND_REPO_NAME" {
+  type = string
+}
+
+variable "TERRAFORM_REPO_NAME" {
   type = string
 }
