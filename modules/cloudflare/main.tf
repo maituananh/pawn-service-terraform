@@ -72,6 +72,15 @@ resource "cloudflare_dns_record" "jenkins" {
   content = "${cloudflare_zero_trust_tunnel_cloudflared.app.id}.cfargotunnel.com"
 }
 
+resource "cloudflare_dns_record" "bastion" {
+  zone_id = var.ZONE_ID
+  name    = "bastion"
+  type    = "CNAME"
+  proxied = true
+  ttl     = 1
+  content = "${cloudflare_zero_trust_tunnel_cloudflared.app.id}.cfargotunnel.com"
+}
+
 resource "cloudflare_zero_trust_tunnel_cloudflared_config" "app" {
   tunnel_id  = cloudflare_zero_trust_tunnel_cloudflared.app.id
   account_id = var.ACCOUNT_ID
@@ -101,6 +110,10 @@ resource "cloudflare_zero_trust_tunnel_cloudflared_config" "app" {
       {
         hostname = "jenkins.${var.DOMAIN}"
         service  = "http://localhost:80"
+      },
+      {
+        hostname = "ssh.${var.DOMAIN}"
+        service  = "ssh://127.0.0.1:22"
       },
       {
         service = "http_status:404"
