@@ -80,3 +80,18 @@ resource "github_repository_webhook" "pawn-service-terraform" {
 
   events = ["pull_request"]
 }
+
+# SETUP FOR JENKINS_SETTINGS REPOSITORY
+resource "github_repository_webhook" "pawn-service-jenkins-settings" {
+  repository = var.JENKINS_SETTINGS_REPO_NAME
+
+  configuration {
+    url          = var.JENKINS_SETTINGS_WEBHOOK_PAYLOAD_URL
+    content_type = "json"
+    insecure_ssl = false
+  }
+
+  active = true
+
+  events = ["pull_request"]
+}
