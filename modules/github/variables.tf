@@ -29,3 +29,11 @@ variable "BACKEND_REPO_NAME" {
 variable "TERRAFORM_REPO_NAME" {
   type = string
 }
+
+variable "JENKINS_SETTINGS_REPO_NAME" {
+  type = string
+}
+
+variable "JENKINS_SETTINGS_WEBHOOK_PAYLOAD_URL" {
+  type = string
+}
